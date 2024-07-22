@@ -1,0 +1,38 @@
+.header {
+  background: #e6f0ff;
+  height: 100vh;
+}
+
+.navbar {
+  padding-top: 38px;
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: 50px;
+  }
+
+  ul {
+    display: flex;
+
+    a {
+      font-weight: 500;
+      font-size: 1.4rem;
+      color: #4f5361;
+      padding: 8px 14px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .user-button {
+    margin-left: auto;
+  }
+
+  .btn {
+    min-width: 100px;
+    padding: 9.5px 16px;
+  }
+}
