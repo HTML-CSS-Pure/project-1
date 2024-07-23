@@ -201,7 +201,7 @@ button {
   font-weight: 500;
 }
 
-.container {
+.content {
   width: 1110px;
   max-width: calc(100% - 48px);
   margin-left: auto;
@@ -414,6 +414,41 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+}
+
+.featured {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  background: #f5fafe;
+}
+.featured header h2 {
+  color: #000339;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.featured header .sub-title {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.featured header .sub-title .desc {
+  color: #5a6473;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.875;
+}
+.featured header .sub-title a {
+  color: #0689ff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+.featured header .sub-title a img {
+  margin-left: 8px;
 }
 
 button.btn {
