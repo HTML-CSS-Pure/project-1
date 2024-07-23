@@ -1,38 +1,54 @@
 .header {
   background: #e6f0ff;
+  position: relative;
+  min-height: 750px;
+  max-height: 1000px;
   height: 100vh;
 }
 
-.navbar {
-  padding-top: 38px;
-  display: flex;
-  align-items: center;
+.hero {
+  margin-top: 130px;
 
-  img {
-    margin-right: 50px;
+  &-content {
+    width : 50.4%;
   }
 
-  ul {
-    display: flex;
-
-    a {
-      font-weight: 500;
-      font-size: 1.4rem;
-      color: #4f5361;
-      padding: 8px 14px;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  &-sub-title {
+    color: #687690;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
   }
 
-  .user-button {
-    margin-left: auto;
+  &-title {
+    color: #000336;
+    font-size: 6.2rem;
+    font-weight: 700;
+    line-height: 1.1875;
+    margin-bottom: 30px;
   }
 
-  .btn {
-    min-width: 100px;
-    padding: 9.5px 16px;
+  &-desc {
+    color: #5A6473;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.78;
+    margin-bottom: 40px;
+  }
+
+  &-btn {
+    min-width: 170px;
+    color: #FFF;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &-image {
+    position: absolute;
+    bottom: 0;
+    left: calc(50.4% + 67px);
   }
 }

@@ -7,28 +7,131 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <img src="./assets/img/logo/logo_benik.svg" alt="Benik." />
+          <ul class="menu">
+            <li><a href="!#">Home</a></li>
+            <li><a href="!#">Features</a></li>
+            <li><a href="!#">Services</a></li>
+            <li><a href="!#">Resources</a></li>
+            <li><a href="!#">Contact</a></li>
+          </ul>
+          <div class="user-button">
+            <button class="btn-transparent btn">Sign in</button>
+            <button class="btn-dark btn">Sign up</button>
+          </div>
+        </nav>
+        <section class="hero">
+          <section class="hero-content">
+            <p class="hero-sub-title">Welcome to Besnik Agency</p>
+            <h1 class="hero-title">Discover a place
+              you'll love to live.</h1>
+            <p class="hero-desc">Get the best real estate deals first,
+              before they hit the mass market! HOT FORECLOSURE DEALS with one simple search.</p>
+            <button class="btn btn-dark hero-btn">More About Us</button>
+          </section>
+          <figure class="hero-image">
+            <img src="./assets/img/header/house illustration.svg" alt="Discover a place
+            you'll love to live.">
+          </figure>
+        </section>
+      </div>
+    </header>
     <main class="main">
-      <!-- Header -->
-      <header class="header">
+      <section class="client">
         <div class="container">
-          <nav class="navbar">
-            <img src="./assets/img/logo_benik.svg" alt="Benik." />
-            <ul class="menu">
-              <li><a href="!#">Home</a></li>
-              <li><a href="!#">Features</a></li>
-              <li><a href="!#">Services</a></li>
-              <li><a href="!#">Resources</a></li>
-              <li><a href="!#">Contact</a></li>
-            </ul>
-            <div class="user-button">
-              <button class="btn-transparent btn">Sign in</button>
-              <button class="btn-dark btn">Sign up</button>
+          <div class="client-info">
+            <div class="client-title">
+              <img src="./assets/img/logo/logo_benik.svg" alt="Benik." />
+              <p class="client-desc">More than 45,000+ companies trust besnik</p>
             </div>
-          </nav>
+            <div class="client-rate">
+              <div class="client-star" id="client-star"></div>
+              <p class="client-rate-info">4.5 Star Ratings (2k+ Review)</p>
+            </div>
+          </div>
+          <div class="client-logo">
+            <img src="./assets/img/client/me_undies.svg" alt="Me Undies">
+            <img src="./assets/img/client/slack.svg" alt="Slack">
+            <img src="./assets/img/client/Amazon.svg" alt="Amazon">
+            <img src="./assets/img/client/woo.svg" alt="Woo Commerce">
+            <img src="./assets/img/client/sitepoint.svg" alt="Sitepoint">
+          </div>
         </div>
-      </header>
-      <!-- Content -->
-      <!-- Footer -->
+      </section>
+      <section class="guide">
+        <div class="container">
+          <div class="guide-header">
+            <h2 class="guide-title">How its works?</h2>
+            <p class="guild-desc">Everything you need to know when you're looking to buy, rent, or sell - all in one place.</p>
+          </div>
+          <div class="guide-list">
+            <div class="guide-item">
+              <img src="./assets/img/guide/buyer.svg" alt="Buyer" class="icon">
+              <h3 class="title">Buyer Guides</h3>
+              <button class="btn btn-transparent">
+                <span>How to buy</span>
+                <img src="./assets/img/guide/arrow.svg" alt="Go">
+              </button>
+            </div>
+            <div class="guide-item">
+              <img src="./assets/img/guide/renter.svg" alt="Renter" class="icon">
+              <h3 class="title">Renter Guides</h3>
+              <button class="btn btn-transparent">
+                <span>How to rent</span>
+                <img src="./assets/img/guide/arrow.svg" alt="Go">
+              </button>
+            </div>
+            <div class="guide-item">
+              <img src="./assets/img/guide/seller.svg" alt="Seller" class="icon">
+              <h3 class="title">Seller Guides</h3>
+              <button class="btn btn-transparent">
+                <span>How to sell</span>
+                <img src="./assets/img/guide/arrow.svg" alt="Go">
+              </button>
+            </div>
+          </div>
+          <div class="guide-btn">
+            <button class="btn btn-dark">Sell Full Guidelines</button>
+          </div>
+        </div>
+
+
+      </section>
     </main>
+
   </body>
+  <script>
+    const $ = document.querySelectorAll.bind(document);
+    let styleList = getComputedStyle(document.body);
+
+    function renderStarTemplate(rate,totalStar) {
+      let i = rate;
+      let j = totalStar;
+      while (j > 0) {
+        renderSingleStar (i >= 1 ? 1 : i)
+        --i;
+        --j;
+      }
+    }
+
+    function renderSingleStar (starRate) {
+      starRate = starRate ? starRate : 1;
+      let starSize = styleList.getPropertyValue("--client-star-size")
+      let starHTMLString = 
+        `       
+          <div class="star">
+            <div class="rate"></div>
+            <div class="unrate"></div>
+          </div>
+        `
+      let starElement = new DOMParser().parseFromString(starHTMLString,"text/html");
+      starElement.querySelector(".rate").style.clipPath = `inset(0px ${(1 - starRate) * starSize}px 0px 0px)`;
+      $("#client-star")[0].innerHTML += starElement.querySelector(".star").outerHTML;
+    }
+
+    renderStarTemplate(4.5,5)
+  </script>
 </html>

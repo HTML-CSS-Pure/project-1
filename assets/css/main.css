@@ -180,6 +180,7 @@ table {
 }
 :root {
   --primary-color: #0f1b4c;
+  --client-star-size: 20;
 }
 
 * {
@@ -213,7 +214,51 @@ a {
 
 .header {
   background: #e6f0ff;
+  position: relative;
+  min-height: 750px;
+  max-height: 1000px;
   height: 100vh;
+}
+
+.hero {
+  margin-top: 130px;
+}
+.hero-content {
+  width: 50.4%;
+}
+.hero-sub-title {
+  color: #687690;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
+}
+.hero-title {
+  color: #000336;
+  font-size: 6.2rem;
+  font-weight: 700;
+  line-height: 1.1875;
+  margin-bottom: 30px;
+}
+.hero-desc {
+  color: #5A6473;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.78;
+  margin-bottom: 40px;
+}
+.hero-btn {
+  min-width: 170px;
+  color: #FFF;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.hero-image {
+  position: absolute;
+  bottom: 0;
+  left: calc(50.4% + 67px);
 }
 
 .navbar {
@@ -238,30 +283,157 @@ a {
 }
 .navbar .user-button {
   margin-left: auto;
+  border-radius: 8px;
 }
 .navbar .btn {
   min-width: 100px;
   padding: 9.5px 16px;
 }
 
-.btn {
+.client {
+  margin-top: 80px;
+  padding-top: 43px;
+}
+.client-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 95px;
+}
+.client-desc, .client-rate-info {
+  color: #7D8589;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.client-desc {
+  margin-top: 23px;
+}
+.client .client-star .star .rate, .client-star .star .client .rate, .client .client-star .star .unrate, .client-star .star .client .unrate, .client .client-star .star, .client-star .client .star {
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 0px;
+  left: 0px;
+}
+.client .client-star .star .rate, .client-star .star .client .rate, .client .client-star .star .unrate, .client-star .star .client .unrate, .client .client-star .star, .client-star .client .star {
+  width: calc(var(--client-star-size) * 1px);
+  height: calc(var(--client-star-size) * 1px);
+}
+.client-star {
+  display: flex;
+  justify-content: flex-end;
+}
+.client-star .star {
+  position: relative;
+}
+.client-star .star .rate, .client-star .star .unrate {
+  position: absolute;
+}
+.client-star .star .rate {
+  background-image: url(../../assets/img/client/star-rate.svg);
+}
+.client-star .star .unrate {
+  background-image: url(../../assets/img/client/star-unrate.svg);
+}
+.client-rate-info {
+  display: inline-block;
+  margin-top: 18.5px;
+}
+.client-logo {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+}
+
+.guide {
+  margin-top: 105px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.guide-header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 41.45%;
+}
+.guide-header h2 {
+  color: #000339;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1;
+  position: relative;
+}
+.guide-header h2::before {
+  content: "";
+  position: absolute;
+  width: 41px;
+  height: 4px;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  background: #000339;
+}
+.guide-header p {
+  margin-top: 20px;
+  color: #5A6473;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.875;
+}
+.guide-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+.guide-item {
+  text-align: center;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+.guide-item h3 {
+  margin-top: 26px;
+  color: #3B3C45;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.guide-item button.btn {
+  margin-top: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #0689FF;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: normal;
+}
+.guide-item button.btn span {
+  margin-right: 6px;
+}
+.guide-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+button.btn {
   border: none;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   font-size: 1.4rem;
   font-weight: 500;
   padding: 14px 16px;
 }
-.btn-dark {
+button.btn-dark {
   background-color: var(--primary-color);
   color: #fff;
 }
-.btn-transparent {
+button.btn-transparent {
   background-color: transparent;
   color: var(--primary-color);
 }
-.btn:hover {
+button.btn:hover {
   opacity: 0.6;
 }
 
