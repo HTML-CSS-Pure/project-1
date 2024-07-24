@@ -88,7 +88,7 @@
               <h3 class="title">Buyer Guides</h3>
               <button class="btn btn-transparent">
                 <span>How to buy</span>
-                <img src="./assets/img/guide/arrow.svg" alt="Go" />
+                <img src="./assets/img/common/arrow.svg" alt="Go" />
               </button>
             </div>
             <div class="guide-item">
@@ -100,7 +100,7 @@
               <h3 class="title">Renter Guides</h3>
               <button class="btn btn-transparent">
                 <span>How to rent</span>
-                <img src="./assets/img/guide/arrow.svg" alt="Go" />
+                <img src="./assets/img/common/arrow.svg" alt="Go" />
               </button>
             </div>
             <div class="guide-item">
@@ -112,7 +112,7 @@
               <h3 class="title">Seller Guides</h3>
               <button class="btn btn-transparent">
                 <span>How to sell</span>
-                <img src="./assets/img/guide/arrow.svg" alt="Go" />
+                <img src="./assets/img/common/arrow.svg" alt="Go" />
               </button>
             </div>
           </div>
@@ -132,11 +132,12 @@
               </p>
               <a href="#!">
                 <span>View All Properties</span>
-                <img src="./assets/img/guide/arrow.svg" alt="Arrow" />
+                <img src="./assets/img/common/arrow.svg" alt="Arrow" />
               </a>
             </div>
           </header>
-          <section class="featured-list"></section>
+          <section class="featured-list row row-cols-3" id="featured-list">
+          </section>
         </div>
       </section>
     </main>
@@ -144,6 +145,76 @@
   <script>
     const $ = document.querySelectorAll.bind(document);
     let styleList = getComputedStyle(document.body);
+
+    renderStarTemplate(4.5, 5);
+
+    let featuredItemList = [
+      {
+        imgName : "nikko.png",
+        imgAlt : "Nikko",
+        title : "Nikko Apartments",
+        subTitle : "8502 Preston Rd. Inglewood, Maine 98280",
+        bed : "5 Beds",
+        both : "2 both",
+        sqft : "2000 Sqft"
+      },
+      {
+        imgName : "coucou.png",
+        imgAlt : "CouCou",
+        title : "CouCou Homestead",
+        subTitle : "5692 Westminton Rd. Inglewood, Arizona 95214",
+        bed : "7 Beds",
+        both : "3 both",
+        sqft : "1500 Sqft"
+      },      {
+        imgName : "lavis.png",
+        imgAlt : "Lavis",
+        title : "Lavis 18 Residence Hunter Dark",
+        subTitle : "1024 Sant Louis Rd. Kentucky, Texas 95112",
+        bed : "7 Beds",
+        both : "5 both",
+        sqft : "2500 Sqft"
+      }
+    ]
+
+    for (let each of featuredItemList) {
+      renderFeaturedItem(each);
+    }
+
+
+    function renderFeaturedItem(item) {
+      let itemHtml = 
+      `
+        <div class="featured-item">
+          <figure>
+            <img class="cover" src="./assets/img/featured/${item.imgName}" alt="${item.imgAlt}">
+          </figure>
+          <div class="featured-detail">
+            <h3 class="title">${item.title}</h3>
+            <p class="desc">${item.subTitle}</p>
+            <div class="featured-info">
+              <div class="item">
+                <img src="./assets/img/featured/icon_bed.svg" alt="" class="icon">
+                <span>${item.bed}</span>
+              </div>
+              <div class="item">
+                <img src="./assets/img/featured/icon_both.svg" alt="" class="icon">
+                <span>${item.both}</span>
+              </div>
+              <div class="item">
+                <img src="./assets/img/featured/icon_sqft.svg" alt="" class="icon">
+                <span>${item.sqft}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+
+      let featuredElement = new DOMParser().parseFromString(itemHtml,"text/html");
+
+      $("#featured-list")[0].innerHTML += featuredElement.querySelector(".featured-item").outerHTML;
+    }
+
 
     function renderStarTemplate(rate, totalStar) {
       let i = rate;
@@ -164,17 +235,12 @@
             <div class="unrate"></div>
           </div>
         `;
-      let starElement = new DOMParser().parseFromString(
-        starHTMLString,
-        "text/html"
-      );
+      let starElement = new DOMParser().parseFromString(starHTMLString,"text/html");
       starElement.querySelector(".rate").style.clipPath = `inset(0px ${
         (1 - starRate) * starSize
       }px 0px 0px)`;
-      $("#client-star")[0].innerHTML +=
-        starElement.querySelector(".star").outerHTML;
+      $("#client-star")[0].innerHTML += starElement.querySelector(".star").outerHTML;
     }
 
-    renderStarTemplate(4.5, 5);
   </script>
 </html>
