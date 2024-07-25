@@ -1,18 +1,22 @@
 .footer {
-    margin-top: 55px;
-    padding-top: 50px;
-    padding-bottom: 58px;
+  margin-top: 55px;
+  padding-top: 50px;
+  padding-bottom: 58px;
 
-    .license {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .category {
+    display: flex;
+  }
 
-        .copy-right {
-            color: #C2C2C2;
-            font-size: 1.4rem;
-            font-weight: 400;
-            line-height: normal;
-        }
+  .license {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .copy-right {
+      color: #c2c2c2;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: normal;
     }
+  }
 }
