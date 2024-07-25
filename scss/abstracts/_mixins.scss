@@ -1,0 +1,10 @@
+@mixin work-break-line($numberLine, $heightAdjust : false,$baseLineHeight : 1.5) {
+    display: -webkit-box;
+    -webkit-line-clamp: #{$numberLine};
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @if $heightAdjust == true {
+        height: calc($baseLineHeight * $numberLine * 1em);
+    }
+}
