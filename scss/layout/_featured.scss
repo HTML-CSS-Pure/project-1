@@ -64,41 +64,55 @@
     background: #fff;
 
     .title {
-      color: #000339;
-      font-size: 2rem;
-      font-weight: 600;
-      line-height: 1.5;
-      @include mixins.work-break-line(1, true);
       position: relative;
 
-      &:hover::before {
-        content: var(--featured-title);
-        position: absolute;
-        left: 0;
-        bottom: calc(1em + 10px);
-        width: 200px;
-        font-size: 1rem;
-        background-color: #ccc;
+      h3 {
+        color: #000339;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.5;
+        @include mixins.work-break-line(1, true);
+
+        a {
+          color: inherit;
+
+          &:hover {
+            color: #0689ff;
+          }
+        }
+
+        &:hover ~ .tooltip {
+          display: block;
+          top: -35px;
+          font-size: 1.4rem;
+        }
       }
     }
 
+    .tooltip {
+      display: none;
+      position: absolute;
+      left: 0;
+      padding: 10px;
+      background-color: #ccc;
+    }
+
     .desc {
-      margin-top: 11px;
-      color: #a3a6ab;
-      font-size: 1.4rem;
-      font-weight: 500;
-      line-height: 1.5;
-      @include mixins.work-break-line(2, true);
       position: relative;
 
-      &:hover::before {
-        content: var(--featured-subtitle);
-        position: absolute;
-        left: 0;
-        bottom: 35px;
-        width: 200px;
-        font-size: 1rem;
-        background-color: #ccc;
+      p:not(.tooltip) {
+        margin-top: 11px;
+        color: #a3a6ab;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.5;
+        @include mixins.work-break-line(2, true);
+
+        &:hover ~ .tooltip {
+          display: block;
+          top: -40px;
+          font-size: 1rem;
+        }
       }
     }
   }

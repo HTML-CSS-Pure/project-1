@@ -5,12 +5,70 @@
 
   .category {
     display: flex;
+    justify-content: space-between;
+
+    &-sub-title {
+      width: 258px;
+      color: #7a7a7e;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.75;
+    }
+
+    &-title {
+      color: #1c1c1d;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 42px;
+    }
+
+    &-list {
+      a {
+        color: #7a7a7e;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: normal;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      ~ .category-list {
+        margin-top: 18px;
+      }
+    }
+
+    &-item.final .icon-list {
+      margin-top: 40px;
+      display: flex;
+
+      a {
+        width: 28px;
+        height: 28px;
+        background: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+
+        &:hover {
+          background: #ccc;
+        }
+
+        ~ a {
+          margin-left: 16px;
+        }
+      }
+    }
   }
 
   .license {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 80px;
 
     .copy-right {
       color: #c2c2c2;
