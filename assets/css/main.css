@@ -348,6 +348,7 @@ a {
 .client-logo img {
   padding: 31px 41px 22px;
   margin-left: -41px;
+  margin-right: -41px;
 }
 .client-logo img:hover {
   box-shadow: 10px 10px 10px #ddd;
