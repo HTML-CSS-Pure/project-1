@@ -67,5 +67,14 @@
         padding-left: 10px;
         padding-right: 10px;
         justify-content: space-between;
+
+        img {
+            padding : 31px 41px 22px;
+            margin-left: -41px;
+        }
+
+        img:hover {
+            box-shadow: 10px 10px 10px #ddd;
+        }
     }
 }
