@@ -3,6 +3,7 @@
     -webkit-line-clamp: #{$numberLine};
     -webkit-box-orient: vertical;
     overflow: hidden;
+    word-break: break-all;
 
     @if $heightAdjust == true {
         height: calc($baseLineHeight * $numberLine * 1em);
