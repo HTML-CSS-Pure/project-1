@@ -1,0 +1,255 @@
+@use "../abstracts/device_mixins" as device;
+
+@include device.screen(desktop) {
+  .mobile-header {
+    display: none;
+  }
+}
+
+@include device.screen(tablet_mobile) {
+  .mobile-header {
+    .menu {
+      &-overlay {
+        position: fixed;
+        z-index: 1;
+        inset: 0;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+      }
+
+      &-drawer {
+        position: fixed;
+        inset: 0 40% 0 0;
+        background: #fff;
+        z-index: 2;
+        transform: translateX(-100%);
+        transition: 0.3s ease;
+        padding: 40px;
+
+        ul {
+          margin-top: 40px;
+
+          a {
+            display: block;
+            padding: 15px 0px;
+            color: #444;
+            font-weight: 500;
+          }
+        }
+      }
+
+      &-checkbox:checked {
+        ~ .menu-overlay {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        ~ .menu-drawer {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .navbar {
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+
+    .toggle-menu {
+      padding: 5px 10px;
+      border: 1px solid #666;
+      border-radius: 8px;
+
+      svg {
+        width: 24px;
+        color: #666;
+      }
+    }
+
+    ul {
+      display: none;
+    }
+  }
+
+  .header {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.85),
+        rgba(255, 255, 255, 0.85)
+      ),
+      url("../../assets/img/header/house\ illustration.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(30px);
+    position: relative;
+
+    .hero {
+      position: absolute;
+      margin-top: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - 100px);
+        text-align: center;
+      }
+
+      &-image {
+        display: none;
+      }
+    }
+  }
+
+  .client {
+    &-logo {
+      justify-content: center;
+    }
+  }
+
+  .guide {
+    &-item {
+      margin: 0;
+      flex: 1;
+    }
+  }
+
+  .subscription {
+    img {
+      display: none;
+    }
+  }
+}
+
+@include device.screen(tablet) {
+  .mobile-user-button {
+    display: none;
+  }
+
+  .featured {
+    &-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .footer {
+    .category {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+}
+
+@include device.screen(mobile) {
+  .header {
+    .user-button {
+      display: none;
+    }
+
+    .hero {
+      &-title {
+        font-size: 4.5rem;
+      }
+    }
+  }
+
+  .mobile-header {
+    .mobile-user-button {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+
+      .btn + .btn {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .client {
+    &-rate-info {
+      display: none;
+    }
+  }
+
+  .featured {
+    &-list {
+      grid-template-columns: 1fr;
+    }
+
+    header.featured-header {
+      a {
+        display: none;
+      }
+    }
+
+    .mobile-featured-button {
+      display: block;
+      margin-top: 30px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  .stats {
+    &-info {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    &-img-block {
+      width: 100%;
+      order: 2;
+
+      img.stats-img {
+        width: 100%;
+      }
+    }
+
+    &-desc {
+      width: 100%;
+      order: 1;
+    }
+
+    &-number {
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      text-align: center;
+    }
+  }
+
+  .subscription {
+    .content {
+      padding: 30px;
+    }
+  }
+
+  .footer {
+    .category {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .license {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

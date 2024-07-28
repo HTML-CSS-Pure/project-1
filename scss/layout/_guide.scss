@@ -1,82 +1,80 @@
 .guide {
-    margin-top: 105px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+  margin-top: 95px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
-    &-header{
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        width: 41.45%;
+  &-header {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 41.45%;
 
-        h2 {
-            color: #000339;
-            font-size: 3.5rem;
-            font-weight: 600;
-            line-height: 1;
-            position: relative;
+    h2 {
+      color: #000339;
+      font-size: 3.5rem;
+      font-weight: 600;
+      line-height: 1;
+      position: relative;
 
-            &::before {
-                content: "";
-                position: absolute;
-                width: 41px;
-                height: 4px;
-                top: -10px;
-                left: 50%;
-                transform: translateX(-50%);
-                border-radius: 12px;
-                background: #000339;
-            }
-        }
-
-        p {
-            margin-top: 20px;
-            color: #5A6473;
-            font-size: 1.6rem;
-            font-weight: 400;
-            line-height: 1.875;
-        }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 41px;
+        height: 4px;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 12px;
+        background: #000339;
+      }
     }
 
-    &-list {
-        display: flex;
-        justify-content: center;
-        margin-top: 70px;
+    p {
+      margin-top: 20px;
+      color: #5a6473;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.875;
+    }
+  }
+
+  &-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+  }
+
+  &-item {
+    text-align: center;
+    margin-left: 70px;
+    margin-right: 70px;
+
+    h3 {
+      margin-top: 26px;
+      color: #3b3c45;
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1.1; /* 110% */
     }
 
-    &-item {
-        text-align: center;
-        margin-left: 70px;
-        margin-right: 70px;
+    button.btn {
+      margin-top: 10px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      color: #0689ff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: normal;
 
-        h3 {
-            margin-top: 26px;
-            color: #3B3C45;
-            font-size: 2rem;
-            font-weight: 500;
-            line-height: 1.1 /* 110% */
-        }
-
-        button.btn {
-            margin-top: 10px;
-            padding-top: 0px;
-            padding-bottom: 0px;
-            color: #0689FF;
-            font-size: 1.4rem;
-            font-weight: 600;
-            line-height: normal;
-
-            span {
-                margin-right: 6px;
-            }
-        }
+      span {
+        margin-right: 6px;
+      }
     }
+  }
 
-    &-btn {
-        display: flex;
-        justify-content: center;
-        margin-top: 50px;
-    }
-
-
+  &-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
 }

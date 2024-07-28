@@ -1,81 +1,84 @@
 .client {
-    margin-top: 80px;
-    padding-top: 43px;
+  margin-top: 80px;
+  padding-top: 43px;
 
-    &-info {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 95px;
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 85px;
+  }
+
+  &-desc,
+  &-rate-info {
+    color: #7d8589;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  &-desc {
+    margin-top: 23px;
+  }
+
+  %star-base {
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0px;
+    left: 0px;
+  }
+
+  %star-size {
+    width: calc(var(--client-star-size) * 1px);
+    height: calc(var(--client-star-size) * 1px);
+  }
+
+  &-star {
+    display: flex;
+    justify-content: flex-end;
+
+    .star {
+      @extend %star-base;
+      @extend %star-size;
+      position: relative;
+
+      .rate,
+      .unrate {
+        @extend %star-base;
+        @extend %star-size;
+        position: absolute;
+      }
+
+      .rate {
+        background-image: url(../../assets/img/client/star-rate.svg);
+      }
+
+      .unrate {
+        background-image: url(../../assets/img/client/star-unrate.svg);
+      }
+    }
+  }
+
+  &-rate-info {
+    display: inline-block;
+    margin-top: 18.5px;
+  }
+
+  &-logo {
+    max-width: calc(100% + 62px);
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+    margin-left: -41px;
+    margin-right: -41px;
+
+    img {
+      padding: 31px 41px 22px;
     }
 
-    &-desc,&-rate-info {
-        color: #7D8589;
-        font-size: 1.6rem;
-        font-weight: 500;
-        line-height: 1.25
+    img:hover {
+      box-shadow: 10px 10px 10px #ddd;
     }
-
-    &-desc {
-        margin-top: 23px;
-    }
-
-    %star-base {
-        background-repeat: no-repeat;
-        background-size: contain;
-        top: 0px;
-        left: 0px;
-    }
-
-    %star-size {
-        width: calc(var(--client-star-size) * 1px);
-        height: calc(var(--client-star-size) * 1px);
-    }
-
-    &-star {
-        display: flex;
-        justify-content: flex-end;
-
-        .star {
-            @extend %star-base;
-            @extend %star-size;
-            position: relative;
-
-            .rate,.unrate {
-                @extend %star-base;
-                @extend %star-size;
-                position: absolute;
-            }
-
-            .rate {
-                background-image: url(../../assets/img/client/star-rate.svg);
-            }
-
-            .unrate {
-                background-image: url(../../assets/img/client/star-unrate.svg);
-            }
-        }
-
-    }
-
-    &-rate-info {
-        display: inline-block;
-        margin-top: 18.5px;
-    }
-
-    &-logo {
-        display: flex;
-        padding-left: 10px;
-        padding-right: 10px;
-        justify-content: space-between;
-
-        img {
-            padding : 31px 41px 22px;
-            margin-left: -41px;
-            margin-right: -41px;
-        }
-
-        img:hover {
-            box-shadow: 10px 10px 10px #ddd;
-        }
-    }
+  }
 }
